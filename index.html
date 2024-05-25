@@ -6,6 +6,31 @@
     <title>Tifosi AI</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-link {
+            color: #000; /* Default color */
+        }
+        .nav-link.active {
+            color: #1D4ED8; /* Blue color */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    </script>
 </head>
 <body>
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
@@ -23,26 +48,133 @@
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+                        <a href="#about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                        <a href="#services" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                        <a href="#partners" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Partners</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Partners</a>
+                        <a href="#contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                        <a href="https://www.datascienceportfol.io/tifosiai" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Portfolio</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+    <!-- ABOUT (#about) -->
+    <div id="about" class="my-10 max-w-screen-xl mx-auto p-4">
+        <div class="text-center bg-white-100 rounded-lg py-10 px-6">
+            <h2 class="text-3xl font-bold mb-4">Who We Are</h2>
+            <p class="text-gray-700 dark:text-gray-300 max-w-lg mx-auto">Tifosi AI is a leading provider of AI solutions, helping businesses of all sizes harness the power of artificial intelligence to drive growth and innovation. Our mission is to democratize AI and make it accessible to everyone, empowering individuals and organizations to achieve more.</p>
+        </div>
+        <h2 class="text-center text-2xl font-bold my-8">Core Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-6 text-center bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+                <img src="ak.jpeg" alt="Abdullah Kazimov" class="w-64 h-64 object-cover rounded-md mb-4 mx-auto" />
+                <h4 class="text-xl font-semibold mb-2">Abdullah Kazimov</h4>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-2">Co-founder & Project Manager</p>
+                <a href="https://www.linkedin.com/in/abdullah-kazimov" target="_blank" class="text-blue-500 hover:underline">View LinkedIn Profile</a>
+            </div>
+            <div class="p-6 text-center bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+                <img src="ng.jpg" alt="Nifdi Guliyev" class="w-64 h-64 object-cover rounded-md mb-4 mx-auto" />
+                <h4 class="text-xl font-semibold mb-2">Nifdi Guliyev</h4>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-2">Co-founder & Tech Lead</p>
+                <a href="https://www.linkedin.com/in/nifdi-guliyev" target="_blank" class="text-blue-500 hover:underline">View LinkedIn Profile</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Services (#services) -->
+    <div id="services" class="my-10 max-w-screen-xl mx-auto p-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+                <h3 class="text-xl font-semibold mb-4">Consulting</h3>
+                <p class="text-gray-700 dark:text-gray-300">Professional consulting services to help you navigate the complexities of AI and technology.</p>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+                <h3 class="text-xl font-semibold mb-4">Events</h3>
+                <p class="text-gray-700 dark:text-gray-300">Organizing and hosting events to foster innovation and collaboration in the tech community.</p>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+                <h3 class="text-xl font-semibold mb-4">Development</h3>
+                <p class="text-gray-700 dark:text-gray-300">Offering development services to build cutting-edge AI solutions tailored to your needs.</p>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+                <h3 class="text-xl font-semibold mb-4">Analytics</h3>
+                <p class="text-gray-700 dark:text-gray-300">Providing data analytics services to derive actionable insights from your data.</p>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md dark:bg-gray-800">
+                <h3 class="text-xl font-semibold mb-4">Research</h3>
+                <p class="text-gray-700 dark:text-gray-300">Conducting research to push the boundaries of what's possible with AI.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Partners (#partners) -->
+    <div id="partners" class="my-10 max-w-screen-xl mx-auto p-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Partners</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mx-auto">
+            <a href="https://www.linkedin.com/company/stemclubkhazar/" class="flex items-center justify-center p-4 rounded-lg">
+                <img src="stemclubkhazar.png" alt="STEM Club of Khazar University" class="h-40" />
+            </a>
+            <a href="https://www.facebook.com/siteadauniversity/" class="flex items-center justify-center p-4 rounded-lg">
+                <img src="adaunisite.png" alt="STEM Club of Khazar University" class="h-40" />
+            </a>
+            <a href="https://www.linkedin.com/company/bhos-research-development-for-artificial-intelligence/" class="flex items-center justify-center p-4 rounded-lg">
+                <img src="bhosr&d.jpeg" alt="STEM Club of Khazar University" class="h-40" />
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact (#contact) -->
+    <div id="contact" class="my-10 max-w-screen-xl mx-auto p-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+        <form action="https://formspree.io/f/xnqeygog" method="POST" class="max-w-lg mx-auto">
+            <div class="mb-4">
+                <label for="name" class="block mb-2">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name" class="w-full px-3 py-2 border rounded-md" />
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block mb-2">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email" class="w-full px-3 py-2 border rounded-md" />
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block mb-2">Your Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Enter your message" class="w-full px-3 py-2 border rounded-md"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Submit</button>
+        </form>
+        <p class="text-center mt-8">You can find us on the internet via <a href="https://lnk.bio/tifosiai" class="text-blue-600 hover:underline">lnk.bio/tifosiai</a></p>
+    </div>
+
+    
+    <footer class="bg-gray-200 dark:bg-gray-900 py-4 text-center">
+        <div class="text-gray-700 dark:text-gray-300">
+            <span>&copy;</span>
+            <span id="currentYear"></span> Tifosi AI
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    
 </body>
 </html>
