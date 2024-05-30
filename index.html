@@ -55,6 +55,29 @@
         .nav-link.active {
             color: #1D4ED8; /* Blue color */
         }
+        /* CSS for the scroll button */
+        #scrollButton {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: transparent; /* Transparent background */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 0; /* No padding */
+            border-radius: 50%;
+        }
+
+        #scrollButton img {
+            width: 40px; /* Set the width of the favicon */
+            height: 40px; /* Set the height of the favicon */
+        }
+
+        #scrollButton:hover {
+            background-color: #333; /* Add a dark-grey background on hover */
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -75,7 +98,7 @@
     <!-- Navbar -->
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://tifosiai.github.io/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="https://tifosi.ai" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="logo.png" class="h-10" alt="Tifosi AI Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tifosi AI</span>
             </a>
@@ -202,6 +225,32 @@
         </form>
         <p class="text-center mt-8">You can find us on the internet via <a href="https://lnk.bio/tifosiai" class="text-blue-600 hover:underline">lnk.bio/tifosiai</a></p>
     </div>
+
+    <button onclick="topFunction()" id="scrollButton" title="Go to top">
+        <img src="https://cdn-icons-png.freepik.com/512/5610/5610930.png" alt="Scroll to top">
+    </button>
+    
+    <script>
+        //Get the button:
+        let mybutton = document.getElementById("scrollButton");
+    
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+    
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
 
     <!-- Footer -->
     <footer class="bg-gray-200 dark:bg-gray-900 py-4 text-center">
