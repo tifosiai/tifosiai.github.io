@@ -157,6 +157,7 @@
     <!-- Hero Section with Video Background -->
     <section class="relative w-full h-screen bg-black text-center text-gray-100 overflow-hidden video-bg">
         <video 
+        id = "vid"
         playsinline 
         autoplay 
         loop 
@@ -168,7 +169,7 @@
         <source src="./galaxy.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-        <video playsinline autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover" src="./galaxy.mp4" poster="poster.jpg"></video>        <div class="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-60">
+        <div class="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-60">
             <h1 id="hero-h1" class="text-8xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">Let it happen</h1>
             <p id="hero-p" class="mt-8 text-6xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">AI for the best</p>
         </div>
@@ -317,6 +318,9 @@
             <script>
                 // Set current year dynamically
                 document.getElementById('currentYear').innerHTML = `© ${new Date().getFullYear()} <a href="https://tifosi.ai" class="hover:underline">Tifosi AI™</a>. All Rights Reserved.`;
+            </script>
+            <script>
+                document.getElementById('vid').play();
             </script>
 </body>
 </html>
