@@ -19,6 +19,28 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.3.0/dist/flowbite.min.css" rel="stylesheet">
 
     <style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            max-width: 1280px; /* Matches the iframe width */
+            margin: 0 auto; /* Centers the container */
+            padding-top: calc(688 / 1280 * 100%); /* Maintains aspect ratio */
+            height: 0; /* Ensures container is sized by padding */
+            overflow: hidden;
+        }
+        
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        </style>
+
+    <style>
+        
+
         video {
         object-fit: cover;
         }
@@ -183,7 +205,23 @@
         </div>
     </section>
 
-
+    <section class="py-8 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-100 mb-10 text-center">Nino for your brand<br><a href="./nino.html" class="text-lg font-bold text-gray-100 mb-10 text-center"><u>learn more</u></a></h2>
+            <div class="iframe-container">
+                <iframe 
+                    width="1280" 
+                    height="688" 
+                    src="https://www.youtube.com/embed/jKwv777mtoA" 
+                    title="Nino Teaser | Unified Data Management &amp; Analytics Solution" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- About Us Section -->
     <section id="about" class="py-20 bg-black">
